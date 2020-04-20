@@ -9,7 +9,7 @@ public class Task3 {
 
         for (int i = 0; i < n; i++) {
 
-            System.out.println(i);
+            System.out.print(i * 2);
 
             if (i == n - 2)
                 tmp = i;
