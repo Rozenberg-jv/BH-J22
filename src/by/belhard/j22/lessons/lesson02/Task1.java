@@ -2,10 +2,10 @@ package by.belhard.j22.lessons.lesson02;
 
 public class Task1 {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         byte b = 126;
-        int r = 150;
+        int r = 150;''
 
         double d = (double) b / r;
 
@@ -31,5 +31,5 @@ public class Task1 {
         System.out.println(++c1 + " " + --c2);
 
 
-    }
+    }*/
 }
