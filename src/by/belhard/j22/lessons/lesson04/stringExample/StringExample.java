@@ -19,5 +19,7 @@ public class StringExample {
 
         System.out.printf("%-10s - %.2f - (%d:%d)", player.getName(), player.getDistance(),
                 player.getX(), player.getY());
+
+        
     }
 }
