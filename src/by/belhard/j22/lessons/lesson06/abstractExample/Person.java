@@ -1,33 +1,22 @@
-package by.belhard.j22.lessons.lesson05.inheritanceExample;
+package by.belhard.j22.lessons.lesson06.abstractExample;
 
 import java.util.Objects;
 
-public class Person implements Comparable<Person>{
+public abstract class Person implements Punishable {
 
     private String name;
 
     private int age;
-
-    @Override
-    public int compareTo(Person person) {
-
-        int ageDif = this.getAge() - person.getAge();
-
-        if (ageDif == 0) {
-            return person.getName().compareTo(this.getName());
-        }
-
-        return ageDif;
-    }
 
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public void work() {
-        System.out.println(name + " do nothing");
-    }
+//    public void work() {
+//        System.out.println(name + " do nothing");
+//    }
+    public abstract void work();
 
     public String getName() {
         return name;
