@@ -8,56 +8,28 @@ import lombok.*;
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"name"})
 @ToString
-public class GoodEntity {
+public class GoodEntity implements Comparable<GoodEntity> {
+
+    public static final String GOODS_TABLE_FORMAT = "%-15s|%10s\n";
 
     private String name;
 
     private int quantity;
 
-    /*public GoodEntity() {
+    public GoodEntity setQuantity(int quantity) {
 
-    }
-
-    public GoodEntity(String name, int quantity) {
-        this.name = name;
         this.quantity = quantity;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+        return this;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        GoodEntity that = (GoodEntity) o;
-        return quantity == that.quantity &&
-                name.equals(that.name);
+    public int compareTo(GoodEntity another) {
+        return this.getName().compareToIgnoreCase(another.getName());
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, quantity);
-    }
+    public String formatForPrint() {
 
-    @Override
-    public String toString() {
-        return "GoodEntity{" +
-                "name='" + name + '\'' +
-                ", quantity=" + quantity +
-                '}';
-    }*/
+        return String.format(GOODS_TABLE_FORMAT, name, quantity);
+    }
 }
