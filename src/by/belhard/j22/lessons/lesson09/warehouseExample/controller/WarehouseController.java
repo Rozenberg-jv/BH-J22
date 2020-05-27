@@ -5,10 +5,6 @@ import by.belhard.j22.lessons.lesson09.warehouseExample.service.GoodServiceImpl;
 import by.belhard.j22.lessons.lesson09.warehouseExample.view.ConsoleView;
 import by.belhard.j22.lessons.lesson09.warehouseExample.view.Viewable;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Properties;
-
 import static by.belhard.j22.lessons.lesson09.warehouseExample.Messages.CLOSE_VARIANT;
 
 public class WarehouseController {
@@ -27,18 +23,17 @@ public class WarehouseController {
 
     public void start() {
 
-        Properties properties = new Properties();
+        /*Properties properties = new Properties();
         try {
             properties.load(new FileReader(PROPERTIES_PATH));
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
-        System.out.println(properties.getProperty("username"));
-        System.out.println(properties.getProperty("qwe", "defaultString"));
+        /*System.out.println(properties.getProperty("username"));
+        System.out.println(properties.getProperty("qwe", "defaultString"));*/
 
-
-        goodService.loadDataFromStorage();
+//        goodService.loadDataFromStorage();
 
         String input = "";
 
@@ -61,7 +56,7 @@ public class WarehouseController {
                     printGoodInfoByName();
                     break;
                 case CLOSE_VARIANT:
-                    goodService.saveDataToStorage();
+//                    goodService.saveDataToStorage();
                     view.close();
                     System.out.println("Good bye!");
                     break;

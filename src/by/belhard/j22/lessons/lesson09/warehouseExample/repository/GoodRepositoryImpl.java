@@ -60,13 +60,13 @@ public class GoodRepositoryImpl implements GoodRepository {
     @Override
     public void changeGoodQuantity(String goodName, int quantity) {
 
-        Optional<GoodEntity> optional = storage.getGoodByName(goodName);
+        /*Optional<GoodEntity> optional = storage.getGoodByName(goodName);
         if (quantity < 0 && optional.isPresent()) {
             GoodEntity good = optional.get();
             if (good.getQuantity() < -quantity)
                 storage.addToStorage(new GoodEntity(goodName, -good.getQuantity()));
         } else
-            storage.addToStorage(new GoodEntity(goodName, quantity));
+            storage.addToStorage(new GoodEntity(goodName, quantity));*/
     }
 
     @Override
@@ -83,10 +83,11 @@ public class GoodRepositoryImpl implements GoodRepository {
 
     private GoodEntity parseGoodEntityFromLine(String line) {
 
-        line = line.replaceAll("\\s*", "");
+        return null;
+        /*line = line.replaceAll("\\s*", "");
 
         String[] split = line.split("\\|");
 
-        return new GoodEntity(split[0], Integer.parseInt(split[1]));
+        return new GoodEntity(split[0], Integer.parseInt(split[1]));*/
     }
 }

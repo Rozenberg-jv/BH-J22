@@ -4,13 +4,16 @@ import lombok.*;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = {"name"})
+@EqualsAndHashCode(of = {"id"})
 @ToString
 public class GoodEntity implements Comparable<GoodEntity> {
 
-    public static final String GOODS_TABLE_FORMAT = "%-15s|%10s\n";
+    public static final String GOODS_TABLE_FORMAT = "%-2s) %-15s|%10s\n";
+
+    private int id;
 
     private String name;
 
@@ -30,6 +33,6 @@ public class GoodEntity implements Comparable<GoodEntity> {
 
     public String formatForPrint() {
 
-        return String.format(GOODS_TABLE_FORMAT, name, quantity);
+        return String.format(GOODS_TABLE_FORMAT, id, name, quantity);
     }
 }
